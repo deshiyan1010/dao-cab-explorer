@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Client</title>
+    <link rel="stylesheet" href="./styles.css" type="text/css">
+</head>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+
+
+<body>
+    <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+    <h2>Blockchain Client</h2>
+    
+    <p>Public Key<p id="mypub"></p></p>
+    <p>Private Key<p id="mypvt"></p></p>
+    <p>Balance: <p id="mybalance"></p></p>
+
+
+    <button type="submit" onclick="refreshBalance()">Refresh Balance</button>
+
+
+
+    <h3>Connect</h3>
+    <form target="dummyframe" id="connect">
+        <input type="text" name="reqtype" value="post" hidden>
+        <input type="text" name="req" value="connect" hidden>
+        <label>IP Address: <input type="text" name="ip" value=""></label><br><br>
+        <label>Port: <input type="text" name="port"></label> <br><br><br>
+        <button type="submit" id="connectbtn">Connect</button>
+    </form>
+    <p id="connectresponse"></p>
+
+    <h3>Send tokens</h3>
+    <form target="dummyframe" id="txn">
+        <input type="text" name="reqtype" value="post" hidden>
+        <input type="text" name="req" value="addtxn" hidden>
+        <input type="text" name="signature_r" value="" hidden>
+        <input type="text" name="signature_s" value="" hidden>
+        <label>Receiver: <input type="text" name="receiver" value=""></label><br><br>
+        <label>Amount: <input type="number" name="amount"></label> <br><br><br>
+        <button type="submit" id="txnbtn">Send</button>
+    </form>
+
+
+    <h3>Explore</h3>
+    <form target="dummyframe" id="exp">
+        <input type="text" name="reqtype" value="post" hidden>
+        <input type="text" name="req" value="exp" hidden>
+        <label>Explore: <input type="text" name="receiver" value=""></label><br><br>
+        <button type="submit" id="expbtn">Send</button>
+    </form>
+    <p id="expresponse"></p>
+
+
+
+</body>
+
+
+<script src="home.js"></script>
+
+</html>
+
+
+<!-- <input type="text" name="pvt" id="pvt" value="" hidden>  USE THIS WHEN YOU WANT TO SEND ANY INFO THAT IS STORED IN VARIABLES ALREADY-->

@@ -68,6 +68,7 @@ connectbtn.addEventListener("click", function() {
 });
 
 
+
 var expbtn = document.getElementById("expbtn");
 expbtn.addEventListener("click", function() {
   var formData = $("#exp").serializeArray();
@@ -80,7 +81,7 @@ expbtn.addEventListener("click", function() {
     contentType: "application/json",
     data: JSON.stringify(formData),
     success: function(response){
-        
+      document.getElementById('expresponse').innerHTML = JSON.stringify(response);
     }
   });
 });

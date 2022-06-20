@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dao-Cab</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- <script src="integrated\home.js"></script>
+     -->
+     <!-- <script src="exploring.js"></script> -->
+     <script src="home.js"></script>
+     <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- Content here -->
+
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <h2>@XYZ Coin</h2>
+                </a>
+                
+
+                <div class="container text-center">
+                    <a class="btn btn-primary" href="#" role="button">Send Coin</a>
+                    <a class="btn btn-primary" href="#" role="button">Book Cab</a>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-outline-primary" onclick="myFunction()">Public Key</button>
+
+                    <!-- <p id="myDIV">
+                        This is my Public KEY
+                    </p> -->
+                    </br>
+                    <div></div>
+
+                    <button type="button" class="btn btn-outline-primary" onclick="myFunction2()">Private Key</button>
+
+                    <!-- <p id="myDIV2">
+                        This is my Private KEY
+                    </p> -->
+                </div>
+
+            </div>
+        </nav>
+    </div>
+    <br>
+    <br>
+    <h1>Exploring Public Key</h1>
+    <br>
+    <br>    
+    <table class="table">
+        <tr>
+            <th>From</th>
+            <th>Amount</th>
+            <th>Date</th>
+        </tr>
+    
+        <tbody id="myTable"> </tbody>
+    </table>
+
+
+    <table class="table">
+        <h3>Sent Transactions</h3>
+        <tr>
+            <th>To</th>
+            <th>Amount</th>
+            <th>Date</th>
+        </tr>
+    
+        <tbody id="myTable2"> </tbody>
+    </table>
+
+    <table class="table">
+        <h3>Rides Taken</h3>
+        <tr>
+            <th>Provider</th>
+            <th>Amount</th>
+            <th>From</th>
+            <th>To</th>
+        </tr>
+    
+        <tbody id="myTable4"> </tbody>
+    </table>
+    <table class="table">
+        <h3>Rides Provided</h3>
+        <tr>
+            <th>Passenger</th>
+            <th>Amount</th>
+            <th>From</th>
+            <th>To</th>
+        </tr>
+    
+        <tbody id="myTable4"> </tbody>
+    </table>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+        crossorigin="anonymous"></script>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myDIV");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+    <script>
+        function myFunction2() {
+            var x = document.getElementById("myDIV2");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+        
+        var data = sessionStorage.getItem("txin");
+        var data2 = sessionStorage.getItem("txout");
+        var data3 = sessionStorage.getItem("rideprovided");
+        var data4 = sessionStorage.getItem("ridetaken");
+
+        var myObject = eval('(' + data + ')')
+        var myObject2 = eval('(' + data2 + ')')
+        var myObject3 = eval('(' + data3 + ')')
+        var myObject4 = eval('(' + data4 + ')')
+
+        var temp="";
+        for (var i = 0; i < myObject.length; i++){
+            temp += `
+            <tr>
+                <td> ${myObject[i].sender}</td>
+                <td> ${myObject[i].amount}</td>
+                <td> ${myObject[i].timestamp}</td>
+            </tr>
+            <br>
+            `
+        }
+        temp+='<br>'
+
+        document.getElementById("myTable").innerHTML = temp;
+        
+        var temp="";
+    for (var i = 0; i < myObject2.length; i++){
+        console.log(myObject2[i].amount);
+        temp += `
+        <tr>
+
+            <td> ${myObject2[i].sender}</td>
+            <td> ${myObject2[i].amount}</td>
+            <td> ${myObject2[i].timestamp}</td>
+
+        </tr>
+        <br>
+        `
+    }
+    temp+='<br>'
+
+    document.getElementById("myTable2").innerHTML = temp;
+
+
+    var temp="";
+    for (var i = 0; i < myObject3.length; i++){
+        console.log(myObject3[i].amount);
+        temp += `
+        <tr>
+
+            <td> ${myObject3[i].provider}</td>
+            <td> ${myObject3[i].amount}</td>
+            <td> ${myObject3[i].from_loc}</td>
+            <td> ${myObject3[i].to_loc}</td>
+
+        </tr>
+        <br>
+        `
+    }
+    temp+='<br>'
+
+    document.getElementById("myTable3").innerHTML = temp;
+
+    var temp="";
+    for (var i = 0; i < myObject4.length; i++){
+        console.log(myObject4[i].amount);
+        temp += `
+        <tr>
+
+            <td> ${myObject4[i].passenger}</td>
+            <td> ${myObject4[i].amount}</td>
+            <td> ${myObject4[i].from_loc}</td>
+            <td> ${myObject4[i].to_loc}</td>
+
+        </tr>
+        <br>
+        `
+    }
+    temp+='<br>'
+
+    document.getElementById("myTable4").innerHTML = temp;
+
+
+    </script>
+</body>
+
+</html>

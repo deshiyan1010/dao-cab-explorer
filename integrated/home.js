@@ -40,8 +40,6 @@
 //   });
 // }
 // refreshBalance()
-
-
 function listtoobj(lst){
   obj = {};
   for(let i = 0; i < lst.length; i++){
@@ -50,22 +48,22 @@ function listtoobj(lst){
   return obj;
 }
 
-var connectbtn = document.getElementById("connectbtn");
-connectbtn.addEventListener("click", function() {
-  var formData = $("#connect").serializeArray();
-  console.log(formData);
-  formData = listtoobj(formData)
-  console.log(formData);
-  $.ajax({
-    url: "http://127.0.0.1:5000/requestredirect",
-    type: "post",
-    contentType: "application/json",
-    data: JSON.stringify(formData),
-    success: function(response){
-        document.getElementById('connectresponse').innerHTML = JSON.stringify(response);
-    }
-  });
-});
+// var connectbtn = document.getElementById("connectbtn");
+// connectbtn.addEventListener("click", function() {
+//   var formData = $("#connect").serializeArray();
+//   console.log(formData);
+//   formData = listtoobj(formData)
+//   console.log(formData);
+//   $.ajax({
+//     url: "http://127.0.0.1:5001/requestredirect",
+//     type: "post",
+//     contentType: "application/json",
+//     data: JSON.stringify(formData),
+//     success: function(response){
+//         document.getElementById('connectresponse').innerHTML = JSON.stringify(response);
+//     }
+//   });
+// });
 
 
 
@@ -74,15 +72,28 @@ expbtn.addEventListener("click", function() {
   var formData = $("#exp").serializeArray();
   console.log(formData);
   formData = listtoobj(formData)
+  // formData.pubKey = parseInt(formData.pubKey)
   console.log(formData);
   $.ajax({
-    url: "http://127.0.0.1:5000/requestredirect",
+    url: "http://127.0.0.1:5001/requestredirect",
     type: "post",
     contentType: "application/json",
     data: JSON.stringify(formData),
     success: function(response){
-      document.getElementById('expresponse').innerHTML = JSON.stringify(response);
-    }
+      function storeUserDataInSession(userData) {
+        var userObjectString = JSON.stringify(userData);
+        window.sessionStorage.setItem('userObject',userData);
+    } 
+      // window.location.replace("exploringcoin.html");
+      data = response;
+      console.log(data['txin']);
+      
+      sessionStorage.setItem("txin", JSON.stringify(response['txin']));
+      sessionStorage.setItem("txout", JSON.stringify(response['txout']));
+
+      window.location = 'exploringcoin.html';
+     
+          }
   });
 });
 
@@ -94,7 +105,7 @@ txnbtn.addEventListener("click", function() {
   var formData = JSON.stringify($("#txn").serializeArray());
   
   var sigs = JSON.parse($.ajax({
-    url: "http://127.0.0.1:5000/requestredirect",
+    url: "http://127.0.0.1:5001/requestredirect",
     type: "post",
     contentType: "application/json",
     data: JSON.stringify(formData),
@@ -110,12 +121,13 @@ txnbtn.addEventListener("click", function() {
   document.getElementById('signature_s').value = sigs['s']
 
   $.ajax({
-    url: "http://127.0.0.1:5000/requestredirect",
+    url: "http://127.0.0.1:5001/requestredirect",
     type: "post",
     contentType: "application/json",
     data: JSON.stringify(formData),
     success: function(response){
         document.getElementById('txnresponse').innerHTML = JSON.stringify(response);
+
     }
   });
 });

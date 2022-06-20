@@ -27,7 +27,7 @@
 
 
 
-    <h3>Connect</h3>
+    <!-- <h3>Connect</h3>
     <form target="dummyframe" id="connect">
         <input type="text" name="reqtype" value="post" hidden>
         <input type="text" name="req" value="connect" hidden>
@@ -35,7 +35,7 @@
         <label>Port: <input type="text" name="port"></label> <br><br><br>
         <button type="submit" id="connectbtn">Connect</button>
     </form>
-    <p id="connectresponse"></p>
+    <p id="connectresponse"></p> -->
 
     <h3>Send tokens</h3>
     <form target="dummyframe" id="txn">
@@ -51,9 +51,9 @@
 
     <h3>Explore</h3>
     <form target="dummyframe" id="exp">
-        <input type="text" name="reqtype" value="post" hidden>
-        <input type="text" name="req" value="exp" hidden>
-        <label>Explore: <input type="text" name="receiver" value=""></label><br><br>
+        <input type="text" name="reqtype" value="get" hidden>
+        <input type="text" name="req" value="explore" hidden>
+        <label>Explore: <input type="text" name="pubKey" value=""></label><br><br>
         <button type="submit" id="expbtn">Send</button>
     </form>
     <p id="expresponse"></p>

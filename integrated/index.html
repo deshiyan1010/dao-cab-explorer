@@ -5,6 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dao-Cab</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
@@ -12,8 +16,7 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <!-- Content here -->
+    <!-- <div class="container-fluid">
 
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
@@ -28,22 +31,208 @@
                 <div>
                     <button type="button" class="btn btn-outline-primary" onclick="myFunction()">Public Key</button>
 
-                    <!-- <p id="myDIV">
-                        This is my Public KEY
-                    </p> -->
                     </br>
                     <div></div>
 
                     <button type="button" class="btn btn-outline-primary" onclick="myFunction2()">Private Key</button>
 
-                    <!-- <p id="myDIV2">
-                        This is my Private KEY
-                    </p> -->
                 </div>
 
             </div>
         </nav>
+    </div> -->
+
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="javascript:void(0) " style="margin-left: 50px;"><h2>XYZ Coin</h2></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mynavbar">
+            <form target="dummyframe" id="exp">
+                <input type="text" name="reqtype" value="get" hidden>
+                <input type="text" name="req" value="explore" hidden>
+                <label><input type="text" name="pubKey" value="" class="form-control" placeholder="Enter Public Key"></label>&nbsp; &nbsp;
+                <button type="submit" id="expbtn" class="btn btn-outline-success">Explore</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      
+
+
+
+
+
+
+
+
+
+
+    <div class="container" style="margin-top: 40px">
+    
+        <div class="row">
+    
+        <div class="three col-md-3">
+            <div class="counter-box colored">
+                <i class="fa fa-line-chart"></i>
+                <span class="counter" id="txn_count"></span>
+                <p>Transactions</p>
+            </div>
+        </div>
+        <div class="three col-md-3">
+            <div class="counter-box colored">
+                <i class="fa fa-delicious"></i>
+                <span class="counter" id="latest_block"></span>
+                <p>Blocks</p>
+            </div>
+        </div>
+        <div class="three col-md-3">
+            <div class="counter-box colored">
+                <i class="fa fa-usd"></i>
+                <span class="counter" id="total_supply"></span>
+                <p>Coin Supply</p>
+            </div>
+        </div>
+        <div class="three col-md-3">
+            <div class="counter-box colored">
+                 <i class="fa fa-credit-card"></i>
+                <span class="counter" id="pen_txn"></span>
+                <p>Pending Transactions</p>
+            </div>
+        </div>
+      </div>	
     </div>
+
+
+
+
+
+
+
+    <div class="card-body table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>E-mail</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-target="#certificates" data-toggle="collapse">
+             <td>Mayor</td>
+             <td>mayor@example.com</td>
+            </tr>
+            <tr data-target="#certificates2" data-toggle="collapse">
+              <td>John Doe</td>
+              <td>john@example.com</td>
+            </tr>
+          </tbody>
+        </table>
+        <div id="certificates" class="card-body table-responsive collapse">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Certificate</th>
+                <th>Certificate No.</th>
+                <th>Expiry Date</th>
+                <th>Certificate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>NS477</td>
+                <td>NS477</td>
+                <td>2025-03-26</td>
+                <td>Show</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="certificates2" class="card-body table-responsive collapse">
+          <table class="table table-hover table-valign-middle">
+            <thead>
+              <tr>
+                <th>Certificate</th>
+                <th>Certificate No.</th>
+                <th>Expiry Date</th>
+                <th>Certificate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>NS499</td>
+                <td>NS499</td>
+                <td>2022-05-30</td>
+                <td>Show</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <div class="container">
         <div class="row">
@@ -57,18 +246,6 @@
                 <pre></pre>
             </div>
         </div>
-    </div>
-
-
-    <div class="container-fluid">
-        <h3>Explore</h3>
-    <form target="dummyframe" id="exp">
-        <input type="text" name="reqtype" value="get" hidden>
-        <input type="text" name="req" value="explore" hidden>
-        <label><input type="text" name="pubKey" value="" class="form-control"></label>&nbsp; &nbsp;
-        <button type="submit" id="expbtn" class="btn btn-outline-success">Send</button>
-    </form>
-    <p id="expresponse"></p>
     </div>
 
     <form target="dummyframe" id="meta">
@@ -80,61 +257,7 @@
 
 
 
-
-
-
-
-
-    <div class="container">
-        <div class="row">
-            <div class="col">
-
-            </div>
-            <div class="col">
-
-            </div>
-            <div class="col">
-                <pre></pre>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col"></div>
-            <div class="col-8 ">
-                <div>
-                    <table class="table table-borderless border border-secondary">
-                        <thead>
-                            <tr>
-                                <th scope="col">
-                                    <h2>Transaction Count</h2>
-                                </th>
-                                <th scope="col">
-                                    <h2>Latest Block </h2>
-                                </th>
-                                <th scope="col">
-                                    <h2>Coin Supply </h2>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td id="txn_count"></td>
-                                <td id="latest_block"></td>
-                                <td id="total_supply"></td>
-                            </tr>
-                        </thead>
-
-                    </table>
-                </div>
-            </div>
-            <div class="col"></div>
-        </div>
-
-    </div>
+           
 
     <div class="container">
         <div class="row">
@@ -220,10 +343,11 @@
             data: JSON.stringify(formData),
             success: function(response){
             console.log(response)
-            // console.log(response["meta"]["txn_count"])
+            console.log(response["meta"]["txn_count"])
             document.getElementById('txn_count').innerHTML = JSON.stringify(response["meta"]["txn_count"]);
             document.getElementById('latest_block').innerHTML = JSON.stringify(response["meta"]["latest_block"]);
             document.getElementById('total_supply').innerHTML = JSON.stringify(response["meta"]["total_supply"]);
+            document.getElementById('pen_txn').innerHTML = JSON.stringify(response["meta"]["pen_txn"].length);
 
             
             console.log(response["meta"]["latest_txn"][0]["amount"])
@@ -243,6 +367,17 @@
 
             document.getElementById("latest_txn_table").innerHTML = temp;
            
+            $('.counter').each(function () {
+            $(this).prop('Counter',0).animate({
+            Counter: $(this).text()
+            }, {
+            duration: 1000,
+            easing: 'swing',
+            step: function (now) {
+                $(this).text(Math.ceil(now));
+            }
+            });
+            });
 
 
 
@@ -285,9 +420,6 @@
         }
         return obj;
         }
-
-
-        
 
     </script>
 </body>

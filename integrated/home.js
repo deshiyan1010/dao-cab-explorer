@@ -80,20 +80,13 @@ expbtn.addEventListener("click", function() {
     contentType: "application/json",
     data: JSON.stringify(formData),
     success: function(response){
-      function storeUserDataInSession(userData) {
-        var userObjectString = JSON.stringify(userData);
-        window.sessionStorage.setItem('userObject',userData);
-    } 
-      // window.location.replace("exploringcoin.html");
-      data = response;
-      console.log(data['txin']);
-      
       sessionStorage.setItem("txin", JSON.stringify(response['txin']));
       sessionStorage.setItem("txout", JSON.stringify(response['txout']));
-
+      sessionStorage.setItem('ridetaken',JSON.stringify(response['ridetaken']));
+      sessionStorage.setItem('rideprovided',JSON.stringify(response['rideprovided']));
       window.location = 'exploringcoin.html';
      
-          }
+      }
   });
 });
 

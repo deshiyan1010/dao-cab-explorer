@@ -32,12 +32,148 @@
 }
 
 .counter-box.colored {
-      background: #3acf87;
+      background: #8bdaf6;
+	  border-radius: 2cm;
 }
 
 .counter-box.colored p,
 .counter-box.colored i,
 .counter-box.colored .counter {
 	color: #fff
+}
+
+body {
+	background: #e6e6e6;
+	font-family: Rubik;
+}
+
+.main-head {
+	background: #0D1440;
+	box-shadow: 0px 1px 10px -6px rgba(0, 0, 0, .15);
+	padding: 1rem;
+	margin-bottom: 0;
+	margin-top: 5rem;
+	color: #fff;
+	font-weight: 500;
+	text-transform: uppercase;
+	border-radius: 4px;
+	font-size: 16px;
+}
+
+.pricing-table {
+	background: #fff;
+	box-shadow: 0px 1px 10px -6px rgba(0, 0, 0, .15);
+	padding: 2rem;
+	transition: .3s;
+	border: 2px solid rgb(241, 232, 232);
+	border-radius: 00.25cm;
+	width: 325px;
+}
+
+.pricing-table:hover {
+	box-shadow: 0px 1px 10px -4px rgba(0, 0, 0, .15);
+}
+
+.pricing-table .pricing-label {
+	border-radius: 2px;
+	padding: .25rem .5rem;
+	margin-bottom: 1rem;
+	display: inline-block;
+	font-size: 12px;
+	font-weight: 500;
+}
+
+.pricing-table h2 {
+	color: #3b3b3b;
+	font-size: 24px;
+	font-weight: 500;
+}
+
+.pricing-table h5 {
+	color: #B3B3B3;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.pricing-table .pricing-features {
+	margin-top: 2rem;
+}
+
+.pricing-table .pricing-features .feature {
+	font-size: 14px;
+	margin: .5rem 0;
+	color: #B3B3B3;
+}
+
+.pricing-table .pricing-features .feature span {
+	display: inline-block;
+	float: right;
+	color: #3b3b3b;
+	font-weight: 500;
+}
+
+.pricing-table 	.price-tag {
+	margin-top: 2rem;
+	text-align: center;
+	font-weight: 500;
+}
+
+.pricing-table .price-tag .symbol {
+	font-size: 24px;
+}
+
+.pricing-table .price-tag .amount {
+	letter-spacing: -2px;
+	font-size: 64px;
+}
+
+.pricing-table .price-tag .after {
+	color: #3b3b3b;
+	font-weight: 500;
+}
+
+.pricing-table .price-button {
+	display: block;
+	color: #fff;
+	margin-top: 2rem;
+	padding: .75rem;
+	border-radius: 2px;
+	text-align: center;
+	font-weight: 500;
+	transition: .3s;
+}
+
+.pricing-table .price-button:hover {
+	text-decoration: none;
+}
+
+.turquoise .pricing-label {
+	background: #b9edee;
+	color: #44cdd2;
+}
+
+.turquoise .price-tag {
+	color: #44cdd2;
+}
+
+.turquoise .price-button {
+	background: #44cdd2;
+}
+
+.turquoise .price-button:hover {
+	background: #2dbcc4;
+}
+
+#meta_hash {
+	overflow: hidden;
+	max-width: 15ch;
+	color: #2dbcc4;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+  }
+
+#meta_hash:hover{
+	text-decoration: underline;
+	cursor: pointer;
 }
 

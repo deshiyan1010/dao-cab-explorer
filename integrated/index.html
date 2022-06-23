@@ -53,7 +53,7 @@
                 <input type="text" name="reqtype" value="get" hidden>
                 <input type="text" name="req" value="explore" hidden>
                 <label><input type="text" name="pubKey" value="" class="form-control" placeholder="Enter Public Key"></label>&nbsp; &nbsp;
-                <button type="submit" id="expbtn" class="btn btn-outline-success">Explore</button>
+                <button type="submit" id="expbtn" class="btn btn-primary">Explore</button>
             </form>
           </div>
         </div>
@@ -104,13 +104,30 @@
       </div>	
     </div>
 
-
-
-
-
-
-
-    
+    <div class="container" style="margin-top: 35px;">
+        <div class="row">
+           <!-- Purple Table -->
+            <!-- Turquoise Table -->
+            <div class="col-md-4">
+                <div class="pricing-table turquoise">
+                   <!-- Table Head -->
+                   <div class="pricing-label">Meta</div>
+                   <h2>Latest Block</h2>
+                   <h5>Most Recently Mined Block</h5>
+                   <!-- Features -->
+                   <div class="pricing-features">
+                      <div class="feature">Index<span id="meta_index"></span></div>
+                      <div class="feature">Previous Hash<span id="meta_hash"></span></div>
+                      <div class="feature">Proof<span id="meta_proof"></span></div>
+                      <!-- <div class="feature">Mail Adresses<span>50</span></div>
+                      <div class="feature">Support<span>Mail/Phone</span></div>
+                   </div>
+                    Button -->
+                   <a class="price-button" href="#">More Details</a> 
+                </div>
+             </div>
+        </div>
+     </div>
 
 
 
@@ -318,7 +335,12 @@
             }
             });
             });
-
+            
+            console.log(response["meta"]["chain"][response["meta"]["chain"].length-1])
+            var latest=response["meta"]["chain"][response["meta"]["chain"].length-1]
+            document.getElementById("meta_proof").innerHTML = latest["proof"];
+            document.getElementById("meta_hash").innerHTML = latest["previous_hash"];
+            document.getElementById("meta_index").innerHTML = latest["index"];
 
 
             }

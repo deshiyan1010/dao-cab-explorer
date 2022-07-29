@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Star Admin2 </title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="../../vendors/feather/feather.css">
+  <link rel="stylesheet" href="../../vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="../../vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="../../vendors/typicons/typicons.css">
+  <link rel="stylesheet" href="../../vendors/simple-line-icons/css/simple-line-icons.css">
+  <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="../../images/favicon.png" />
+</head>
+
+<body>
+  <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+  <div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+    <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+        <div class="me-3">
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-bs-toggle="minimize">
+            <span class="icon-menu"></span>
+          </button>
+        </div>
+        <div>
+          
+          
+        </div>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-top"> 
+        <ul class="navbar-nav">
+          <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
+            <h1 class="welcome-text" style="font-weight: bold; color: black">Velocity <span class="text-black fw-bold"></span></h1>
+            <h3 class="welcome-sub-text">Smart Chain Explorer</h3>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+         
+          <!-- <li class="nav-item d-none d-lg-block">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Enter Public Key" aria-label="Enter Public Key">
+              <div class="input-group-append">
+                <button class="btn btn-sm btn-primary" type="button">Explore</button>
+              </div>
+            </div>
+          </li> -->
+         
+          <li class="nav-item dropdown">
+                    <form target="dummyframe" id="mine">
+                        <input type="text" name="reqtype" value="post" hidden>
+                        <input type="text" name="req" value="mine" hidden>
+                    </form>
+                    <button type="submit" id="minebtn" class="btn btn-primary">Mine</button>
+          </li>
+          <li class="nav-item dropdown"> 
+            
+          </li>
+          <li class="nav-item dropdown d-none d-lg-block user-dropdown">
+           
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-bs-toggle="offcanvas">
+          <span class="mdi mdi-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:../../partials/_settings-panel.html -->
+      
+     
+      <!-- partial -->
+      <!-- partial:../../partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html">
+              <i class="mdi mdi-grid-large menu-icon"></i>
+              <span class="menu-title">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item nav-category">UI Elements</li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+              <i class="menu-icon mdi mdi-floor-plan"></i>
+              <span class="menu-title">UI Elements</span>
+              <i class="menu-arrow"></i> 
+            </a>
+            <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Buttons</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/dropdowns.html">Dropdowns</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Typography</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item nav-category">Forms and Datas</li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+              <i class="menu-icon mdi mdi-card-text-outline"></i>
+              <span class="menu-title">Form elements</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="form-elements">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href="../../pages/forms/basic_elements.html">Basic Elements</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+              <i class="menu-icon mdi mdi-chart-line"></i>
+              <span class="menu-title">Charts</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="charts">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="../../pages/charts/chartjs.html">ChartJs</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+              <i class="menu-icon mdi mdi-table"></i>
+              <span class="menu-title">Tables</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="tables">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="../../pages/tables/basic-table.html">Basic table</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
+              <i class="menu-icon mdi mdi-layers-outline"></i>
+              <span class="menu-title">Icons</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="../../pages/icons/mdi.html">Mdi icons</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item nav-category">pages</li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <i class="menu-icon mdi mdi-account-circle-outline"></i>
+              <span class="menu-title">User Pages</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login.html"> Login </a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item nav-category">help</li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://bootstrapdash.com/demo/star-admin2-free/docs/documentation.html">
+              <i class="menu-icon mdi mdi-file-document"></i>
+              <span class="menu-title">Documentation</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Connect</h4>
+                  
+                  <form target="dummyframe" id="connect" class="forms-sample">
+                    <div class="form-group">
+                        <input type="text" name="reqtype" value="post" hidden>
+                        <input type="text" name="req" value="connect" hidden>
+                        <label>IP Address: <input type="text" name="ip" value=""  class="form-control" placeholder="Enter IP" style="width: 500px;"></label><br><br>
+                        <label>Port: <input type="text" name="port"  class="form-control" placeholder="Enter Port Number" style="width:500px;"></label> <br><br>
+                        <button type="submit" id="connectbtn" class="btn btn-primary">Connect</button>
+                    </div>
+                    
+                </form>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Print Neighbours</h4>
+                  
+                  <form target="dummyframe" id="neighbors">
+                    <input type="text" name="reqtype" value="get" hidden>
+                    <input type="text" name="req" value="neighbors" hidden>
+                    <!-- <input type="text"  name="ip1" value='' hidden>
+                    <input type="text"  name="port1" value='' hidden> -->
+                    <button type="submit"  class="btn btn-primary">Print Neighbors</button>
+                    <div class="table-responsive pt-3">
+                      <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th>
+                              #
+                            </th>
+                            <th>
+                              IP Address 
+                            </th>
+                            <th>
+                              Port Number 
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody id="neighborTable">
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                </div>
+              </div>
+            </div>
+           
+         
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="../../vendors/js/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <script src="../../vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="../../js/off-canvas.js"></script>
+  <script src="../../js/hoverable-collapse.js"></script>
+  <script src="../../js/template.js"></script>
+  <script src="../../js/settings.js"></script>
+  <script src="../../js/todolist.js"></script>
+  <script>
+    function listtoobj(lst){
+            obj = {};
+            for(let i = 0; i < lst.length; i++){
+              obj[lst[i]["name"]] = lst[i]["value"];
+            }
+            return obj;
+          }
+          var connectbtn = document.getElementById("connectbtn");
+        connectbtn.addEventListener("click", function() {
+        var formData = $("#connect").serializeArray();
+        console.log(formData);
+        formData = listtoobj(formData)
+        console.log(formData);
+        $.ajax({
+            url: "http://0.0.0.0:5001/requestredirect",
+            type: "post",
+            contentType: "application/json",
+            data: JSON.stringify(formData),
+            success: function(response){
+                alert("Node has been connected!")
+                // document.getElementById('connectresponse').innerHTML = JSON.stringify(response)
+            }
+        });
+        });
+
+
+        var neighborButton = document.getElementById("neighbors");
+        neighborButton.addEventListener("click", function() {
+        var formData = $("#neighbors").serializeArray();
+        console.log(formData);
+        formData = listtoobj(formData)
+        console.log(formData);
+        $.ajax({
+            url: "http://0.0.0.0:5001/requestredirect",
+            type: "post",
+            contentType: "application/json",
+            data: JSON.stringify(formData),
+            success: function(response){
+                console.log(response["neigh"].length)
+                console.log("ip",response["neigh"][0][0])
+                console.log("port",response["neigh"][0][1])
+                // document.getElementById('neighresponse').innerHTML = JSON.stringify(response);
+                var temp=""
+                for (var i = 0; i < response["neigh"].length; i++){
+                    temp += `
+                    <tr>
+                        <td> ${i+1}</td>
+                        <td> ${response["neigh"][i][0]}</td>
+                        <td> ${response["neigh"][i][1]}</td>
+                    </tr>
+                    <br>
+                    `
+                }
+                temp+='<br>'
+
+                document.getElementById("neighborTable").innerHTML = temp;
+            }
+        });
+        });
+
+        var mineButton = document.getElementById("minebtn");
+        mineButton.addEventListener("click", function() {
+        var formData = $("#mine").serializeArray();
+        console.log(formData);
+        formData = listtoobj(formData)
+        console.log(formData);
+        $.ajax({
+            url: "http://0.0.0.0:5001/requestredirect",
+            type: "post",
+            contentType: "application/json",
+            data: JSON.stringify(formData),
+            success: function(response){
+                // document.getElementById('mineresponse').innerHTML = JSON.stringify(response)
+                alert("Congratulations! You have just mined a block", )
+            }
+        });
+        });
+  </script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <!-- End custom js for this page-->
+</body>
+
+</html>

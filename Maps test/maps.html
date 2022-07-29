@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Leaflet sample</title>
+    <link
+      rel="stylesheet"
+      href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"
+    />
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+  </head>
+
+  <body>
+    <div id="map" style="width: 900px; height: 580px"></div>
+    <button onclick="getDrop()">Book</button>
+    <script>
+
+      navigator.geolocation.getCurrentPosition(
+        function (position) {
+          lat = position.coords.latitude;
+          long = position.coords.longitude;
+          console.log(lat,long);
+          globalThis.lat = lat;
+          globalThis.long = long;
+          setMarker(lat, long);
+        },
+        function (error) {
+          alert(error.message);
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 5000,
+        },
+        { timeout: 10000 }
+      );
+
+        lat = globalThis.lat
+        long = globalThis.long
+
+    
+
+    function setMarker(lat,long){
+
+        var mapOptions = {
+            center: [lat, long],
+            zoom: 50,
+        };
+
+        globalThis.map = new L.map("map",mapOptions)
+
+        console.log(lat,long)
+
+
+        var layer = new L.TileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png");
+
+        globalThis.map.addLayer(layer);
+
+        var marker = L.marker([lat, long],{}).addTo(globalThis.map);
+        var marker = L.marker([lat,long],{
+            icon: new L.DivIcon({
+                className: 'my-div-icon',
+                html: '<span class="my-div-span">Pickup</span>'
+            })
+        }).addTo(globalThis.map)
+        globalThis.marker = L.marker([lat+0.001, long],{draggable:true}).addTo(globalThis.map);
+    }
+
+     function getDrop(){
+      console.log(globalThis.marker.getLatLng())
+     }
+
+
+    </script>
+  </body>
+</html>

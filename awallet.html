@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Star Admin2 </title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="../../vendors/feather/feather.css">
+  <link rel="stylesheet" href="../../vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="../../vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="../../vendors/typicons/typicons.css">
+  <link rel="stylesheet" href="../../vendors/simple-line-icons/css/simple-line-icons.css">
+  <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
+  <link
+      rel="stylesheet"
+      href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"
+    />
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="cookie.js"></script>
+  
+    <link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="../../images/favicon.png" />
+</head>
+    <style>
+        *,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  list-style: none;
+  list-style-type: none;
+  text-decoration: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+/* Set the size of the div element that contains the map */
+#map {
+  height: 400px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #252b46;
+  background: #ffffff;
+}
+
+.container {
+  max-width: 75rem;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.title {
+  font-family: inherit;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: inherit;
+  color: #252b46;
+  text-transform: capitalize;
+}
+
+.paragraph {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: inherit;
+  max-width: 100%;
+  margin-top: 0.5rem;
+  color: #9194a1;
+}
+
+.main .tab {
+  width: 100%;
+  height: auto;
+  padding: 3rem 0;
+}
+.main .tab-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-bottom: 1.3px solid #dbdbdb;
+  transition: all 0.3s ease;
+}
+.main .tab-menu-link {
+  position: relative;
+  overflow: hidden;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: inherit;
+  cursor: pointer;
+  width: calc(100% / 4);
+  height: auto;
+  padding: 1rem 0;
+  border-bottom: 2.5px solid transparent;
+  color: #9194a1;
+  background: #ffffff;
+  transition: all 0.3s ease;
+}
+.main .tab-menu-link::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 2;
+}
+.main .tab-menu-link.is-active {
+  bottom: 0px;
+  z-index: 0;
+  overflow: hidden;
+  border-bottom: 2.5px solid #7d63d8;
+  color: #252b46;
+  background: #ffffff;
+}
+.main .tab-bar {
+  padding: 2.5rem 0;
+  overflow: hidden;
+  background: #ffffff;
+}
+.main .tab-bar-content {
+  display: none;
+  width: 100%;
+  min-height: 10rem;
+  transition: all 0.3s ease;
+}
+.main .tab-bar-content.is-active {
+  display: block;
+}
+.center {
+margin: auto;
+width: 60%;
+padding: 10px;
+}
+    </style>
+    <title>Document</title>
+</head>
+<body>
+  <p id="pub"></p>
+        <p id="pvt"></p>
+    <main class="main">
+        <div class="container">
+          <div class="tab">
+            <div class="tab-menu">
+              <button class="tab-menu-link" data-content="item-1">
+                <span data-title="item-1">Send Token</span>
+              </button>
+              <button class="tab-menu-link is-active" data-content="item-2">
+                <span data-title="item-2">Book Ride</span>
+              </button>
+              <button class="tab-menu-link" data-content="item-3">
+                <span data-title="item-3">Accept Rides</span>
+              </button>
+            </div>
+            <div class="tab-bar">
+              <div class="tab-bar-content" id="item-1">
+                <div class="texts">
+                  <h2 class="title">Send Token</h2>
+                  <div class="col-lg-12 grid-margin stretch-card">
+                    <div class="card">
+                      <div class="card-body">
+                        <!-- <h4 class="card-title">Enter the amount</h4> -->
+                        
+                        <form target="dummyframe" class="forms-sample">
+                          <div class="form-group">
+                              <label><h4>Receiver's Public Key </h4><input type="text"  class="form-control" placeholder="Public Key" id="rpub" style="width: 500px;"></label><br><br>
+                              <label><h4>Amount</h4> <input type="text"  class="form-control" placeholder="Amount" id="rpubamt" style="width:500px;"></label> <br><br>
+                              <button type="submit" onclick="transaction()" class="btn btn-primary">Send</button>
+                          </div>
+                          
+                      </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-bar-content is-active" id="item-2">
+                <div class="texts">
+                  <h2 class="title">Book Ride</h2>
+                </div>
+                <div class="center">
+                  <div id="map" style="width: 900px; height: 580px"></div>
+                  </div>
+               <div class="center">
+                <button type="submit" class="btn btn-primary" style="width: 600px;" onclick="book()">Book</button>
+               </div>
+              </div>
+              <div class="tab-bar-content" id="item-3">
+                <div class="texts">
+                  <h2 class="title">Nearby Requests</h2>
+                  <div class="col-lg-12 grid-margin stretch-card">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="table-responsive">
+                          <table class="table table-hover">
+                            <thead>
+                              <tr>
+                                <th>Public Key</th>
+                                <th>Pickup Location</th>
+                                <th>Drop Location</th>
+                                <th>Status</th>
+                                <th>Bid Amount</th>
+                                <th>Submit</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Jacob</td>
+                                <td>Photoshop</td>
+                                <td>Photoshop</td>
+                                <td><label class="badge badge-danger">Pending</label></td>
+                                <td><input type="text" class="form-control" placeholder="Enter BID" style="width: 400px;"><br><br></td>
+                                <td><button type="submit" class="btn btn-primary">Submit</button></td>
+                              </tr>
+                              <tr>
+                                <td>Jacob</td>
+                                <td>Photoshop</td>
+                                <td>Photoshop</td>
+                                <td><label class="badge badge-danger">Pending</label></td>
+                                <td><input type="text" class="form-control" placeholder="Enter BID" style="width: 400px;"><br><br></td>
+                                <td><button type="submit" class="btn btn-primary">Submit</button></td>
+                              </tr>
+                              <tr>
+                                <td>Jacob</td>
+                                <td>Photoshop</td>
+                                <td>Photoshop</td>
+                                <td><label class="badge badge-danger">Pending</label></td>
+                                <td><input type="text" class="form-control" placeholder="Enter BID" style="width: 400px;"><br><br></td>
+                                <td><button type="submit" class="btn btn-primary">Submit</button></td>
+                              </tr>
+                              <tr>
+                                <td>Jacob</td>
+                                <td>Photoshop</td>
+                                <td>Photoshop</td>
+                                <td><label class="badge badge-danger">Pending</label></td>
+                                <td><input type="text" class="form-control" placeholder="Enter BID" style="width: 400px;"><br><br></td>
+                                <td><button type="submit" class="btn btn-primary">Submit</button></td>
+                              </tr>
+                              <tr>
+                                <td>Jacob</td>
+                                <td>Photoshop</td>
+                                <td>Photoshop</td>
+                                <td><label class="badge badge-danger">Pending</label></td>
+                                <td><input type="text" class="form-control" placeholder="Enter BID" style="width: 400px;"><br><br></td>
+                                <td><button type="submit" class="btn btn-primary">Submit</button></td>
+                              </tr>
+      
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+      
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+</body>
+
+
+<script>
+    // Tabs Action
+const tabLink = document.querySelectorAll(".tab-menu-link");
+const tabContent = document.querySelectorAll(".tab-bar-content");
+
+tabLink.forEach((item) => {
+  item.addEventListener("click", activeTab);
+});
+
+function activeTab(item) {
+  const btnTarget = item.currentTarget;
+  const content = btnTarget.dataset.content;
+
+  tabContent.forEach((item) => {
+    item.classList.remove("is-active");
+  });
+
+  tabLink.forEach((item) => {
+    item.classList.remove("is-active");
+  });
+
+  document.querySelector("#" + content).classList.add("is-active");
+  btnTarget.classList.add("is-active");
+}
+
+</script>
+
+<script>
+  if(getCookie("publicKey").length==0){
+      pubpvt = function() {$.ajax({
+          async:false,
+          url: "http://192.168.43.97:5001/requestredirect",
+          type: "post",
+          contentType: "application/json",
+          data: JSON.stringify({"reqtype":"get","req":"genpubpvt"}),
+          success: function(response){
+              
+              setCookie("publicKey",response["pub"],10000);
+              setCookie("privateKey",response["pvt"],10000);
+              console.log(response);
+          }
+      });}
+
+      setTimeout(pubpvt(), 1000000);
+  }
+  globalThis.pub = getCookie("publicKey");
+  globalThis.pvt = getCookie("privateKey");
+  console.log(1,pub,pvt);
+  document.getElementById("pub").innerHTML = globalThis.pub;
+  document.getElementById("pvt").innerHTML = globalThis.pvt;
+  $.ajax({
+          url: "http://192.168.43.97:5001/requestredirect",
+          type: "post",
+          contentType: "application/json",
+          data: JSON.stringify({
+            'pvt':globalThis.pvt,
+            'reqtype':"get",
+            'req':'getsigs'
+          }),
+          success: function(response){
+            globalThis.sigr = response['r'];
+            globalThis.sigs = response['s'];
+                          }
+      });
+
+</script>
+
+
+
+
+<script>
+
+  navigator.geolocation.getCurrentPosition(
+    function (position) {
+      lat = position.coords.latitude;
+      long = position.coords.longitude;
+      console.log(lat,long);
+      globalThis.lat = lat;
+      globalThis.long = long;
+      setMarker(lat, long);
+      listrides();
+    },
+    function (error) {
+      alert(error.message);
+    },
+    {
+      enableHighAccuracy: true,
+      timeout: 5000,
+    },
+    { timeout: 10000 }
+  );
+
+    lat = globalThis.lat
+    long = globalThis.long
+
+
+
+function setMarker(lat,long){
+
+    var mapOptions = {
+        center: [lat, long],
+        zoom: 10,
+    };
+
+    globalThis.map = new L.map("map",mapOptions)
+
+    console.log(lat,long)
+
+
+    var layer = new L.TileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png");
+
+    globalThis.map.addLayer(layer);
+
+    var marker = L.marker([lat, long],{}).addTo(globalThis.map);
+    var marker = L.marker([lat,long],{
+        icon: new L.DivIcon({
+            className: 'my-div-icon',
+            html: '<span class="my-div-span">Pickup</span>'
+        })
+    }).addTo(globalThis.map)
+    globalThis.marker = L.marker([lat+0.001, long],{draggable:true}).addTo(globalThis.map);
+}
+
+ 
+function book(){
+  dlat = Number(globalThis.marker.getLatLng().lat)
+  dlng = Number(globalThis.marker.getLatLng().lng)
+  
+
+
+  $.ajax({
+                url: "http://192.168.43.97:5001/requestredirect",
+                type: "post",
+                contentType: "application/json",
+                data: JSON.stringify({
+                  'passenger':globalThis.pub,
+                  'pick_loc':[globalThis.lat,globalThis.long],
+                  'drop_loc':[dlat,dlng],
+                  'signed_hash':null,
+                  'signature_r':globalThis.sigr,
+                  'signature_s':globalThis.sigs,
+                  'reqtype':"post",
+                  'req':'bookride'
+                }),
+                success: function(response){
+                                }
+            });
+}
+
+
+
+function transaction(){
+
+
+  $.ajax({
+        url: "http://192.168.43.97:5001/requestredirect",
+        type: "post",
+        contentType: "application/json",
+        data: JSON.stringify({
+          'sender':globalThis.pub,
+          'receiver': document.getElementById('rpub').value,
+          'amount':Number(document.getElementById('rpubamt').value),
+          'signed_hash':null,
+          'signature_r':globalThis.sigr,
+          'signature_s':globalThis.sigs,
+          'reqtype':"post",
+          'req':'addtxn'
+        }),
+        success: function(response){
+                        }
+    });
+}
+
+
+
+function listrides(){
+  console.log("getting")
+
+  $.ajax({
+      url: "http://192.168.43.97:5001/requestredirect",
+      type: "post",
+      contentType: "application/json",
+      data: JSON.stringify({
+        'lat':globalThis.lat,
+        'long':globalThis.long,
+        'k':1,
+        'reqtype':"get",
+        'req':'listride'
+      }),
+      success: function(response){
+        console.log(response);
+                        }
+    });
+
+}
+
+
+
+function bidforride(){
+
+
+  $.ajax({
+          url: "http://192.168.43.97:5001/requestredirect",
+          type: "post",
+          contentType: "application/json",
+          data: JSON.stringify({
+            'provider':globalThis.pub,
+            'passenger': ,
+            'bid':Number(.value),
+            'signed_hash':null,
+            'signature_r':globalThis.sigr,
+            'signature_s':globalThis.sigs,
+            'reqtype':"post",
+            'req':'bidride'
+          }),
+          success: function(response){
+                          }
+      });
+}
+
+function selbid(){
+
+
+    $.ajax({
+        url: "http://192.168.43.97:5001/requestredirect",
+        type: "post",
+        contentType: "application/json",
+        data: JSON.stringify({
+          'provider':,
+          'passenger': globalThis.pub,
+
+          'reqtype':"post",
+          'req':'selbidride'
+        }),
+        success: function(response){
+                        }
+    });
+}
+
+
+</script>
+
+</html>
+
+
+

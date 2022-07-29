@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    #container {
+      width: 400px;
+      height: 400px;
+      position: relative;
+      background: yellow;
+    }
+    #animate {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      background-color: red;
+    }
+    </style>
+  <head>
+
+  </head>
+
+  <body>
+    Hello
+    <p><button onclick="myMove()">Click Me</button></p> 
+
+<div id ="container">
+  <div id ="animate"></div>
+</div>
+  <p id="t1">??</p>
+  </body>
+
+  <script>
+    
+    navigator.geolocation.getCurrentPosition(
+    function(position) {
+         alert("Lat: " + position.coords.latitude + "\nLon: " + position.coords.longitude);
+    },
+    function(error){
+         alert(error.message);
+    }, {
+         enableHighAccuracy: true
+              ,timeout : 5000
+    }
+);
+
+    function myMove() {
+  let id = null;
+  const elem = document.getElementById("animate");   
+  let pos = 0;
+  clearInterval(id);
+  id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + "px"; 
+      elem.style.left = pos + "px"; 
+    }
+  }
+}
+
+  </script>
+</html>

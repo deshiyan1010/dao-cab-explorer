@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wallet</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="cookie.js"></script>
+  </head>
+  <body>
+        <p id="pub"></p>
+        <p id="pvt"></p>
+  </body>
+
+  <script>
+    if(getCookie("publicKey").length==0){
+        pubpvt = function() {$.ajax({
+            async:false,
+            url: "http://127.0.0.1:5001/requestredirect",
+            type: "post",
+            contentType: "application/json",
+            data: JSON.stringify({"reqtype":"get","req":"genpubpvt"}),
+            success: function(response){
+                
+                setCookie("publicKey",response["pub"],10000);
+                setCookie("privateKey",response["pvt"],10000);
+                console.log(response);
+            }
+        });}
+
+        setTimeout(pubpvt(), 1000000);
+    }
+    var pub = getCookie("publicKey");
+    var pvt = getCookie("privateKey");
+    console.log(1,pub,pvt);
+    document.getElementById("pub").innerHTML = pub;
+    document.getElementById("pvt").innerHTML = pvt;
+
+
+  </script>
+
+</html>

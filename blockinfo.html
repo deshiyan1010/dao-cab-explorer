@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Star Admin2</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="../../vendors/feather/feather.css" />
+    <link
+      rel="stylesheet"
+      href="../../vendors/mdi/css/materialdesignicons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../vendors/ti-icons/css/themify-icons.css"
+    />
+    <link rel="stylesheet" href="../../vendors/typicons/typicons.css" />
+    <link
+      rel="stylesheet"
+      href="../../vendors/simple-line-icons/css/simple-line-icons.css"
+    />
+    <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css" />
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="../../css/vertical-layout-light/style.css" />
+    <!-- endinject -->
+    <link rel="shortcut icon" href="../../images/favicon.png" />
+    <style>
+          .hash{
+        overflow: hidden;
+      	max-width: 13ch;
+      	color: #42494a;
+      	text-overflow: ellipsis;
+        font-weight: bold;
+      	white-space: nowrap;
+      }
+
+      .date{
+        overflow: hidden;
+      	max-width: 7ch;
+      	text-overflow: ellipsis;
+        font-weight: bold;
+      	white-space: nowrap;
+      }
+      .hash:hover{
+        color: rgb(82, 150, 213);
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container-scroller">
+      <!-- partial:../../partials/_navbar.html -->
+      <nav
+        class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row"
+      >
+        <div
+          class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start"
+        >
+          <div class="me-3">
+            <button
+              class="navbar-toggler navbar-toggler align-self-center"
+              type="button"
+              data-bs-toggle="minimize"
+            >
+              <span class="icon-menu"></span>
+            </button>
+          </div>
+          <div></div>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-top">
+          <ul class="navbar-nav">
+            <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
+              <h1 class="welcome-text">
+                <span class="text-black fw-bold">Velocity </span>
+              </h1>
+              <h3 class="welcome-sub-text">
+                Smart Chain Explorer
+              </h3>
+            </li>
+          </ul>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item d-none d-lg-block">
+              <div class="input-group">
+                <!-- <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter Public Key"
+                  aria-label="Enter Public Key"
+                /> -->
+                <div class="input-group-append">
+                  <!-- <button class="btn btn-sm btn-primary" type="button">
+                    Explore
+                  </button> -->
+                </div>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <!-- <button class="btn btn-sm btn-primary" type="button">
+                Dev Ops
+              </button> -->
+            </li>
+            <li class="nav-item dropdown"></li>
+            <li class="nav-item dropdown d-none d-lg-block user-dropdown"></li>
+          </ul>
+          <button
+            class="navbar-toggler navbar-toggler-right d-lg-none align-self-center"
+            type="button"
+            data-bs-toggle="offcanvas"
+          >
+            <span class="mdi mdi-menu"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_settings-panel.html -->
+
+        <!-- partial -->
+        <!-- partial:../../partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../../index.html">
+                <i class="mdi mdi-grid-large menu-icon"></i>
+                <span class="menu-title">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item nav-category">UI Elements</li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="collapse"
+                href="#ui-basic"
+                aria-expanded="false"
+                aria-controls="ui-basic"
+              >
+                <i class="menu-icon mdi mdi-floor-plan"></i>
+                <span class="menu-title">UI Elements</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="ui-basic">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      href="../../pages/ui-features/buttons.html"
+                      >Buttons</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      href="../../pages/ui-features/dropdowns.html"
+                      >Dropdowns</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      href="../../pages/ui-features/typography.html"
+                      >Typography</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item nav-category">Forms and Datas</li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="collapse"
+                href="#form-elements"
+                aria-expanded="false"
+                aria-controls="form-elements"
+              >
+                <i class="menu-icon mdi mdi-card-text-outline"></i>
+                <span class="menu-title">Form elements</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="form-elements">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      href="../../pages/forms/basic_elements.html"
+                      >Basic Elements</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="collapse"
+                href="#charts"
+                aria-expanded="false"
+                aria-controls="charts"
+              >
+                <i class="menu-icon mdi mdi-chart-line"></i>
+                <span class="menu-title">Charts</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="charts">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../../pages/charts/chartjs.html"
+                      >ChartJs</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="collapse"
+                href="#tables"
+                aria-expanded="false"
+                aria-controls="tables"
+              >
+                <i class="menu-icon mdi mdi-table"></i>
+                <span class="menu-title">Tables</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="tables">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      href="../../pages/tables/basic-table.html"
+                      >Basic table</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="collapse"
+                href="#icons"
+                aria-expanded="false"
+                aria-controls="icons"
+              >
+                <i class="menu-icon mdi mdi-layers-outline"></i>
+                <span class="menu-title">Icons</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="icons">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../../pages/icons/mdi.html"
+                      >Mdi icons</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item nav-category">pages</li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="collapse"
+                href="#auth"
+                aria-expanded="false"
+                aria-controls="auth"
+              >
+                <i class="menu-icon mdi mdi-account-circle-outline"></i>
+                <span class="menu-title">User Pages</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="auth">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../../pages/samples/login.html">
+                      Login
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item nav-category">help</li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="http://bootstrapdash.com/demo/star-admin2-free/docs/documentation.html"
+              >
+                <i class="menu-icon mdi mdi-file-document"></i>
+                <span class="menu-title">Documentation</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row">
+              <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Block Info</h4>
+
+                    <div class="table-responsive">
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Index</th>
+                            <th>Prev-Hash</th>
+                            <th>Proof</th>
+                            <th>Timestamp</th>
+                            <th>Transactions</th>
+                            <th>Rides</th>
+                            <!-- <th>Ride Bookings</th> -->
+                          </tr>
+                        </thead>
+                        <tbody id="blocks_table"></tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:../../partials/_footer.html -->
+
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="../../vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="../../vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="../../js/off-canvas.js"></script>
+    <script src="../../js/hoverable-collapse.js"></script>
+    <script src="../../js/template.js"></script>
+    <script src="../../js/settings.js"></script>
+    <script src="../../js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <!-- End custom js for this page-->
+    <script>
+      console.log(sessionStorage);
+      // myObject[i].previous_hash
+      // console.log((sessionStorage["chain"]))
+      var chain = sessionStorage["chain"];
+      console.log(chain);
+      var myObject = eval("(" + chain + ")");
+      console.log(myObject);
+      console.log("hi", myObject[1].transactions[0]["sender"]);
+      var temp = "";
+      for (var i = 0; i < myObject.length; i++) {
+        console.log(myObject[i].transactions['receiver'], 'herererererererererereerererr')
+        temp += `
+            <tr>
+                          <td>${myObject[i].index}</td>
+                          <td class="hash">${myObject[i].previous_hash}</td>
+                          <td>${myObject[i].proof} </td>
+                          <td class="date">${myObject[i].timestamp}</td>
+                          <td>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                  data-bs-target="#collapse${i}-1" aria-expanded="false" aria-controls="collapse${i}-1"">
+                                 View Transactions
+                                </button>
+                              </h2>
+                              <div id="collapse${i}-1" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">`;
+                                  for(var j=0;j<myObject[i].transactions.length;j++){
+                                    temp+=
+                                  ` Receiver: <p class="hash">  ${myObject[i].transactions[j]['receiver']}</p>
+                                  Sender: <p class="hash">  ${myObject[i].transactions[j]['sender']}</p>
+                                  <p> Amount: ${myObject[i].transactions[j]['amount']}</p>
+                                  --------------------------------------------------------<br>`;
+
+                                  }
+                                temp+=`
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                  data-bs-target="#collapse${i}-2" aria-expanded="false" aria-controls="collapse${i}-2">
+                                 View Ride Completions
+                                </button>
+                              </h2>
+                              <div id="collapse${i}-2" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">`;
+                                  for(var j=0;j<myObject[i].ride_bookings.length;j++){
+                                    temp+=
+                                  ` Passenger: <p class="hash">  ${myObject[i].ride_bookings[j]['passenger']}</p>
+                                  Provider: <p class="hash">  ${myObject[i].ride_bookings[j]['provider']}</p>
+                                  <p> Pickup: ${myObject[i].ride_bookings[j]['from_loc']}</p>
+                                  <p> Drop: ${myObject[i].ride_bookings[j]['to_loc']}</p>
+                                  <p> Amount: ${myObject[i].ride_bookings[j]['amount']}</p>
+                                  --------------------------------------------------------<br>`;
+
+                                  }
+                                temp+=`
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+              </tr>
+            `;
+                                  
+      }
+      temp += "<br>";
+      document.getElementById("blocks_table").innerHTML = temp;
+    </script>
+  </body>
+</html>

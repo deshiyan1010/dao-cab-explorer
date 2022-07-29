@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Star Admin2 </title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="../../vendors/feather/feather.css">
+  <link rel="stylesheet" href="../../vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="../../vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="../../vendors/typicons/typicons.css">
+  <link rel="stylesheet" href="../../vendors/simple-line-icons/css/simple-line-icons.css">
+  <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
+
+
+  <style>
+    .container{
+    margin-top:100px;
+}
+
+.counter-box {
+	display: block;
+	background: #f6f6f6;
+	padding: 40px 20px 37px;
+	text-align: center
+}
+
+.counter-box p {
+	margin: 5px 0 0;
+	padding: 0;
+	color: #909090;
+	font-size: 18px;
+	font-weight: 500
+}
+
+.counter-box i {
+	font-size: 60px;
+	margin: 0 0 15px;
+	color: #d2d2d2
+}
+
+.counter { 
+	display: block;
+	font-size: 32px;
+	font-weight: 700;
+	color: #666;
+	line-height: 28px
+}
+
+.counter-box.colored {
+      background: #3acf87;
+      border-radius: 0.25cm;
+}
+
+.counter-box.colored p,
+.counter-box.colored i,
+.counter-box.colored .counter {
+	color: #fff
+}
+
+.stretch-card>.card {
+     width: 100%;
+     min-width: 100%
+ }
+
+ body {
+     background-color: #f9f9fa
+ }
+
+ .flex {
+     -webkit-box-flex: 1;
+     -ms-flex: 1 1 auto;
+     flex: 1 1 auto
+ }
+
+ @media (max-width:991.98px) {
+     .padding {
+         padding: 1.5rem
+     }
+ }
+
+ @media (max-width:767.98px) {
+     .padding {
+         padding: 1rem
+     }
+ }
+
+ .padding {
+     padding: 3rem
+ }
+.box {
+    position: relative;
+    border-radius: 3px;
+    background: #ffffff;
+    /* border-top: 3px solid #d2d6de; */
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.box-header.with-border {
+    /* border-bottom: 1px solid #f4f4f4; */
+}
+
+.box-header {
+    color: #444;
+    display: block;
+    padding: 10px;
+    position: relative;
+}
+
+.box-header:before, .box-body:before, .box-footer:before, .box-header:after, .box-body:after, .box-footer:after {
+    content: " ";
+    display: table;
+}
+
+.box-header .box-title {
+    display: inline-block;
+    font-size: 18px;
+    margin: 0;
+    line-height: 1;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: 'Source Sans Pro',sans-serif;
+}
+
+.box-header:after, .box-body:after, .box-footer:after {
+    content: " ";
+    display: table;
+}
+
+.box-body {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding: 10px;
+}
+
+.box-body>.table {
+    margin-bottom: 0;
+}
+
+.table-bordered {
+    border: 1px solid #f4f4f4;
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+table {
+    background-color: transparent;
+}
+
+.table tr td .progress {
+    margin-top: 5px;
+}
+
+.progress-bar-danger {
+    background-color: #dd4b39;
+}
+.progress-xs {
+    height: 7px;
+}
+
+.bg-red{
+    background-color: #dd4b39 !important;
+color:#fff;
+}
+
+.badge {
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-color: #777;
+    border-radius: 10px;
+}
+
+.progress-bar-yellow, .progress-bar-warning {
+    background-color: #f39c12;
+}
+
+.bg-yellow{
+    background-color: #f39c12;
+}
+
+.progress-bar-primary {
+    background-color: #3c8dbc;
+}
+
+.bg-light-blue{
+    background-color: #3c8dbc;
+}
+
+.progress-bar-success {
+    background-color: #00a65a;
+}
+
+.bg-green{
+    background-color: #00a65a;
+}
+
+.box-footer {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    /* border-top: 1px solid #f4f4f4; */
+    padding: 10px;
+    background-color: #fff;
+}
+
+.pull-right {
+    float: right!important;
+}
+
+.pagination>li {
+    display: inline;
+}
+
+.pagination-sm>li:first-child>a, .pagination-sm>li:first-child>span {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.pagination>li:first-child>a, .pagination>li:first-child>span {
+    margin-left: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.pagination>li>a {
+    background: #fafafa;
+    color: #666;
+}
+
+.pagination-sm>li>a, .pagination-sm>li>span {
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.pagination>li>a, .pagination>li>span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #337ab7;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+a {
+    background-color: transparent;
+}
+.hash{
+  overflow: hidden;
+	max-width: 7ch;
+	color: #42494a;
+	text-overflow: ellipsis;
+  font-weight: bold;
+	white-space: nowrap;
+}
+
+.date{
+  overflow: hidden;
+	max-width: 7ch;
+	text-overflow: ellipsis;
+  font-weight: bold;
+	white-space: nowrap;
+}
+.hash:hover{
+  color: rgb(82, 150, 213);
+  text-decoration: underline;
+  cursor: pointer;
+}
+  </style>
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="../../images/favicon.png" />
+</head>
+
+<body>
+  <div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+    <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+        <div class="me-3">
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-bs-toggle="minimize">
+            <span class="icon-menu"></span>
+          </button>
+        </div>
+        <div>
+          
+          
+        </div>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-top"> 
+        <ul class="navbar-nav">
+          <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
+            <h1 class="welcome-text" style="color: black; font-weight:bold">Velocity <span class="text-black fw-bold"></span></h1>
+            <h3 class="welcome-sub-text">Smart Chain Explorer </h3>
+            <p style="font-size: 200;" id="pubKey"></p>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+         
+       
+         
+          <li class="nav-item dropdown">
+            <button class="btn btn-primary" type="button">Dev Ops</button>
+          </li>
+          <li class="nav-item dropdown"> 
+            
+          </li>
+          <li class="nav-item dropdown d-none d-lg-block user-dropdown">
+           
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-bs-toggle="offcanvas">
+          <span class="mdi mdi-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:../../partials/_settings-panel.html -->
+      
+     
+      <!-- partial -->
+      <!-- partial:../../partials/_sidebar.html -->
+      
+      <!-- partial -->
+
+      
+
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Received Transactions</h4>
+                  
+                  <div class="table-responsive" >
+                    <div style="height: 300px; overflow:scroll; overflow-x:hidden">
+                      <table class="table table-hover" >
+                        <thead>
+                          <tr>
+                            <th>Sender</th>
+                            <th>Amount</th>
+                            <th>Timestamp</th>
+                            <!-- <th>Status</th> -->
+                          </tr>
+                        </thead>
+                        <tbody id="received_txn">
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Sent Transactions</h4>
+                  
+                  <div class="table-responsive" >
+                    <div style="height: 300px; overflow:scroll; overflow-x:hidden">
+                      <table class="table table-hover" >
+                        <thead>
+                          <tr>
+                            <th>Sender</th>
+                            <th>Amount</th>
+                            <th>Timestamp</th>
+                            <!-- <th>Status</th> -->
+                          </tr>
+                        </thead>
+                        <tbody id="sent_txn">
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Rides Provided</h4>
+                  
+                  <div class="table-responsive" >
+                    <div style="height: 300px; overflow:scroll; overflow-x:hidden">
+                      <table class="table table-hover" >
+                        <thead>
+                          <tr>
+                            <th>Provider</th>
+                            <th>Fare</th>
+                            <th>Pickup</th>
+                            <th>Drop</th>
+                            <!-- <th>Status</th> -->
+                          </tr>
+                        </thead>
+                        <tbody id="rides_provided">
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Rides Taken</h4>
+                  
+                  <div class="table-responsive" >
+                    <div style="height: 300px; overflow:scroll; overflow-x:hidden">
+                      <table class="table table-hover" >
+                        <thead>
+                          <tr>
+                            <th>Passenger</th>
+                            <th>Fare</th>
+                            <th>Pickup</th>
+                            <th>Drop</th>
+                            <!-- <th>Status</th> -->
+                          </tr>
+                        </thead>
+                        <tbody id="rides_taken">
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Active Requests</h4>
+                  
+                  <div class="table-responsive" >
+                    <div style="height: 300px; overflow:scroll; overflow-x:hidden">
+                      <table class="table table-hover" >
+                        <thead>
+                          <tr>
+                            <th>Provider</th>
+                            <th>Fare</th>
+                            <th>Pickup</th>
+                            <th>Drop</th>
+                            <!-- <th>Status</th> -->
+                          </tr>
+                        </thead>
+                        <tbody id="active_servicing">
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Active Servicing</h4>
+                  
+                  <div class="table-responsive" >
+                    <div style="height: 300px; overflow:scroll; overflow-x:hidden">
+                      <table class="table table-hover" >
+                        <thead>
+                          <tr>
+                            <th>Passenger</th>
+                            <th>Fare</th>
+                            <th>Pickup</th>
+                            <th>Drop</th>
+                            <!-- <th>Status</th> -->
+                          </tr>
+                        </thead>
+                        <tbody id="active_request">
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+         
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="../../vendors/js/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <script src="../../vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="../../js/off-canvas.js"></script>
+  <script src="../../js/hoverable-collapse.js"></script>
+  <script src="../../js/template.js"></script>
+  <script src="../../js/settings.js"></script>
+  <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+  <script src="../../js/todolist.js"></script>
+  <script>
+     $(document).ready(function() {
+        $('#example').DataTable();
+    } );
+        var data = sessionStorage.getItem("txin");
+        var data2 = sessionStorage.getItem("txout");
+        var data3 = sessionStorage.getItem("rideprovided");
+        var data4 = sessionStorage.getItem("ridetaken");
+        var data5 = sessionStorage.getItem("activeRequest");
+        var data6 = sessionStorage.getItem("activeServicing");
+        var pubKey = sessionStorage.getItem("pubKey");
+        document.getElementById('pubKey').innerHTML = pubKey.substring(1,pubKey.length-1);
+        // var myObject5 = sessionStorage.getItem("activeRequest");
+        // var myObject6 = sessionStorage.getItem("activeServicing");
+        // console.log("here")
+        // console.log("here",myObject5)
+        console.log(sessionStorage)
+        var myObject = eval('(' + data + ')')
+        var myObject2 = eval('(' + data2 + ')')
+        var myObject3 = eval('(' + data3 + ')')
+        var myObject4 = eval('(' + data4 + ')')
+        var myObject5 = eval('(' + data5 + ')')
+        var myObject6 = eval('(' + data6 + ')')
+        // console.log(typeof(data),typeof(myObject))
+
+        console.log(data, myObject)
+        console.log(typeof(data), typeof(myObject))
+        console.log(data6, myObject6)
+        console.log(typeof(data5), typeof(myObject5))
+        var temp="";
+        for (var i = 0; i < myObject.length; i++){
+            temp += `
+            <tr>
+                <td class="hash"> ${myObject[i].sender}</td>
+                <td> ${myObject[i].amount}</td>
+                <td> ${myObject[i].timestamp}</td>
+            </tr>
+            <br>
+            `
+        }
+        temp+='<br>'
+
+        document.getElementById("received_txn").innerHTML = temp;
+
+        // console.log(myObject)
+        var temp="";
+        for (var i = 0; i < myObject2.length; i++){
+            console.log(myObject2[i].amount);
+            temp += `
+            <tr>
+
+                <td class="hash"> ${myObject2[i].sender}</td>
+                <td> ${myObject2[i].amount}</td>
+                <td> ${myObject2[i].timestamp}</td>
+
+            </tr>
+            <br>
+            `
+        }
+        temp+='<br>'
+
+        document.getElementById("sent_txn").innerHTML = temp;
+
+        var temp="";
+        for (var i = 0; i < myObject3.length; i++){
+            // console.log(myObject3[i].amount);
+            temp += `
+            <tr>
+
+                <td class="hash"> ${myObject3[i].provider}</td>
+                <td> ${myObject3[i].amount}</td>
+                <td> ${myObject3[i].from_loc}</td>
+                <td> ${myObject3[i].to_loc}</td>
+
+            </tr>
+            <br>
+            `
+        }
+        temp+='<br>'
+
+        document.getElementById("rides_provided").innerHTML = temp;
+
+        var temp="";
+      for (var i = 0; i < myObject4.length; i++){
+          console.log(myObject4[i].amount);
+          temp += `
+          <tr>
+
+              <td class="hash"> ${myObject4[i].passenger}</td>
+              <td> ${myObject4[i].amount}</td>
+              <td> ${myObject4[i].from_loc}</td>
+              <td> ${myObject4[i].to_loc}</td>
+
+          </tr>
+          <br>
+          `
+      }
+      temp+='<br>'
+
+      document.getElementById("rides_taken").innerHTML = temp;
+        var temp="";
+        // console.log("hi1",myObject);
+        // console.log("hi2",myObject2);
+        // console.log("hi3",myObject3);
+        // console.log("hi4",myObject4);
+        // console.log("hi5",myObject5);
+        // console.log("hi6",myObject6);
+      var temp=""
+      // console.log("oi")
+      // console.log(myObject5.length)
+      for (var i = 0; i < myObject5.length; i++){
+          // console.log("inside",myObject5);
+          temp += `
+          <tr>
+
+              <td class="hash"> ${myObject5[i]["provider"]}</td>
+              <td> ${myObject5[i]["amount"]}</td>
+              <td> ${myObject5[i]["from_loc"]}</td>
+              <td> ${myObject5[i]["to_loc"]}</td>
+              
+
+          </tr>
+          <br>
+          `
+      }
+      temp+='<br>'
+
+      document.getElementById("active_servicing").innerHTML = temp;
+
+
+
+      // console.log("here i ammmmmm",myObject6)
+
+      console.log(typeof(myObject6))
+        var temp="";
+      for (var i = 0; i < myObject6.length; i++){
+          // console.log(myObject6[i].amount);
+          temp += `
+          <tr>
+
+              <td> ${myObject6[i]["passenger"]}</td>
+              <td> ${myObject6[i]["amount"]}</td>
+              <td> ${myObject6[i]["from_loc"]}</td>
+              <td> ${myObject6[i]["to_loc"]}</td>
+
+          </tr>
+          <br>
+          `
+      }
+      temp+='<br>'
+
+      document.getElementById("active_request").innerHTML = temp;
+  </script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <!-- End custom js for this page-->
+</body>
+
+</html>

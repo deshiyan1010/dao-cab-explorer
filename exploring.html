@@ -320,6 +320,7 @@ a {
             <h1 class="welcome-text" style="color: black; font-weight:bold">Velocity <span class="text-black fw-bold"></span></h1>
             <h3 class="welcome-sub-text">Smart Chain Explorer </h3>
             <p style="font-size: 200;" id="pubKey"></p>
+            <p style="font-size: 200;" id="bal"></p>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
@@ -558,7 +559,9 @@ a {
         var data5 = sessionStorage.getItem("activeRequest");
         var data6 = sessionStorage.getItem("activeServicing");
         var pubKey = sessionStorage.getItem("pubKey");
+        var bal = sessionStorage.getItem("bal");
         document.getElementById('pubKey').innerHTML = pubKey.substring(1,pubKey.length-1);
+        document.getElementById('bal').innerHTML = "Balance: "+bal;
         // var myObject5 = sessionStorage.getItem("activeRequest");
         // var myObject6 = sessionStorage.getItem("activeServicing");
         // console.log("here")

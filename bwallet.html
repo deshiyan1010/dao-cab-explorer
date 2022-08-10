@@ -157,9 +157,11 @@ padding: 10px;
 <body>
         
   <main class="main">
-    <p id="pub"></p>
-    <p id="pvt"></p>
+
     <div class="container">
+      <p id="pub"></p>
+      <p id="pvt"></p>
+      <p id="bal"></p>
       <div class="tab">
         <div class="tab-menu">
           <button class="tab-menu-link" data-content="item-1">
@@ -317,8 +319,8 @@ function activeTab(item) {
   globalThis.pub = getCookie("publicKey");
   globalThis.pvt = getCookie("privateKey");
   console.log(1,pub,pvt);
-  document.getElementById("pub").innerHTML = globalThis.pub;
-  document.getElementById("pvt").innerHTML = globalThis.pvt;
+  document.getElementById("pub").innerHTML = "Public Key: "+globalThis.pub;
+  document.getElementById("pvt").innerHTML = "Private Key: "+globalThis.pvt;
   $.ajax({
           url: "http://192.168.43.97:5001/requestredirect",
           type: "post",
@@ -582,6 +584,24 @@ function selbid(field_no){
                         }
     });
 }
+
+
+
+$.ajax({
+    url: "http://192.168.43.97:5001/requestredirect",
+    type: "post",
+    contentType: "application/json",
+    data: JSON.stringify({
+      'pub': globalThis.pub,
+      'reqtype':"get",
+      'req':'balance'
+    }),
+    success: function(response){
+      document.getElementById("bal").innerHTML = "Balance: "+response['bal'];
+                    }
+});
+
+
 
 
 function bidlist(){

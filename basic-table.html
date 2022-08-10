@@ -940,6 +940,7 @@ a {
                   activeServicing.push(response['activeServicing'])
                 sessionStorage.setItem('activeRequest',JSON.stringify(activeRequest));
                 sessionStorage.setItem('activeServicing',JSON.stringify(activeServicing));
+                sessionStorage.setItem('bal',JSON.stringify(response['bal']))
                 // sessionStorage.setItem('activeServicing',JSON.stringify(response['activeServicing']));
                 window.location = 'exploring.html';
                 console.log(sessionStorage)
